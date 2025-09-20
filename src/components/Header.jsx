@@ -95,20 +95,18 @@ const Header = () => {
                   onClick={() => handleNavigation(item)}
                   className="relative group"
                 >
-                  <div className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none">
+                  <div className="relative px-3 py-1 bg-blue-600 text-white font-medium text-sm rounded-md shadow-md hover:shadow-lg hover:bg-blue-700 transition-all duration-300">
                     <span className="relative z-10">{item.name}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   {newBlogCount > 0 ? (
-                    <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce min-w-[20px] text-center">
+                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-bounce min-w-[16px] text-center">
                       {newBlogCount > 9 ? '9+' : newBlogCount}
                     </div>
                   ) : (
-                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce">
+                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-pulse">
                       HOT
                     </div>
                   )}
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-purple-500 opacity-30 blur-sm group-hover:blur-md transition-all duration-300"></div>
                 </button>
               ) : (
                 <button
