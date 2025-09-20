@@ -7,17 +7,11 @@ import { useNotification } from '../contexts/NotificationContext';
 // Custom logo component with "ADEL" and slogan
 const Logo = () => (
   <div className="flex items-center space-x-3">
-    <div className="relative">
-      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
-        <span className="text-white font-bold text-xl">A</span>
-      </div>
-      <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
-    </div>
     <div className="flex flex-col">
-      <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-wide">
-        ADEL
+      <span className="text-3xl text-gray-900 dark:text-white tracking-wide" style={{ fontFamily: 'cursive', fontWeight: '300', textShadow: '1px 1px 2px rgba(0,0,0,0.1)' }}>
+        Adel Kedir
       </span>
-      <span className="text-xs text-blue-600 dark:text-blue-400 font-medium -mt-1">
+      <span className="text-xs text-blue-600 dark:text-blue-400 font-medium -mt-1 ml-1">
         full stack full impact
       </span>
     </div>
@@ -95,18 +89,20 @@ const Header = () => {
                   onClick={() => handleNavigation(item)}
                   className="relative group"
                 >
-                  <div className="relative px-3 py-1 bg-blue-600 text-white font-medium text-sm rounded-md shadow-md hover:shadow-lg hover:bg-blue-700 transition-all duration-300">
+                  <div className="relative px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none">
                     <span className="relative z-10">{item.name}</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   {newBlogCount > 0 ? (
-                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-bounce min-w-[16px] text-center">
+                    <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce min-w-[20px] text-center">
                       {newBlogCount > 9 ? '9+' : newBlogCount}
                     </div>
                   ) : (
-                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-pulse">
+                    <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce">
                       HOT
                     </div>
                   )}
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 to-purple-500 opacity-30 blur-sm group-hover:blur-md transition-all duration-300"></div>
                 </button>
               ) : (
                 <button
@@ -157,14 +153,14 @@ const Header = () => {
                     onClick={() => handleNavigation(item)}
                     className="relative group text-left"
                   >
-                    <div className="relative inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg rounded-lg shadow-lg">
+                    <div className="relative inline-flex items-center px-3 py-1 bg-blue-600 text-white font-medium text-sm rounded-md shadow-md">
                       <span className="mr-2">{item.name}</span>
                       {newBlogCount > 0 ? (
-                        <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-bounce min-w-[20px] text-center">
+                        <span className="bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-bounce min-w-[16px] text-center">
                           {newBlogCount > 9 ? '9+' : newBlogCount}
                         </span>
                       ) : (
-                        <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                        <span className="bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-pulse">
                           HOT
                         </span>
                       )}
